@@ -1,70 +1,32 @@
-# Getting Started with Create React App
+README FILE 
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# International Payment System
+This project is an internal international payment system for a bank, where customers can register, log in, and make international payments via the bank’s online portal. Employees can access the payment portal to verify and process the transactions via SWIFT. The system focuses on secure handling of sensitive customer data, ensuring password security and preventing common attacks.
 
-## Available Scripts
+# Project Structure
+The project consists of two main parts:
 
-In the project directory, you can run:
+Frontend: A React-based user interface for customers to register, log in, and make payments. Backend: An Express.js-based API server that handles authentication, payment processing, and storing transaction data.
 
-### `npm start`
+# Prerequisites
+Ensure you have the following installed:
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Node.js (v14 or above) npm (Node Package Manager) or yarn MongoDB (for storing user and payment information) Ensure that you have a MongoDB database running locally or in the cloud (e.g., MongoDB Atlas) and have its connection string ready.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+# Setup Instructions
+Clone the Repository
+Install Dependencies
 
-### `npm test`
+# Features
+Customer Registration & Login:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Full name, ID number, account number, and password are required. Passwords are securely hashed and salted. Making Payments:
 
-### `npm run build`
+Customers can enter payment details, choose a currency, and provide the SWIFT code of the payee. Employee Verification:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Pre-registered employees can log in to verify customer transactions and forward them to SWIFT. Security:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Password hashing and salting. Input validation using RegEx for secure data entry. Rate limiting, brute force protection, and SSL.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+# Security Measures
+Password Security: Passwords are hashed and salted using bcrypt. Input Validation: Inputs are validated using RegEx patterns to prevent injection attacks. Rate Limiting: Implemented using express-rate-limit to prevent brute force attacks. Brute Force Protection: Included with express-brute to block repeated attempts. SSL: Ensure all traffic is served over HTTPS.
